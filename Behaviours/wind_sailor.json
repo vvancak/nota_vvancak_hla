@@ -1,0 +1,227 @@
+{
+	"additionalNodes": [],
+	"additionalParameters": {
+		"root": {
+			"height": 88,
+			"width": 180
+		}
+	},
+	"inputs": [],
+	"outputs": [],
+	"properties": {
+		"F0Ch2iguSxpWv7qmtk0C9NmWqEF6XyaR": {
+			"height": 60,
+			"title": "sequence",
+			"width": 143,
+			"x": 863,
+			"y": -93
+		},
+		"HrumxsnSBwr59KTdUlwYNRbZNn5Cyf1H": {
+			"height": 89,
+			"title": "Commander Move",
+			"width": 270,
+			"x": 1043,
+			"y": -59
+		},
+		"NX1CzpwSuFG0dtdomaqLxjVZcl61Ucgp": {
+			"height": 97,
+			"title": "Wind Pointer Debug",
+			"width": 451,
+			"x": 1043,
+			"y": -157
+		},
+		"QrEWPHROUvo3pO19iwxFgodKQSnO1sAA": {
+			"height": 60,
+			"title": "repeat",
+			"width": 131,
+			"x": 231,
+			"y": 10
+		},
+		"RAl8c8hnP1PBhP1uRdTQ0RI2v1qNXdXw": {
+			"height": 74,
+			"title": "nota_vvancak_hla.GroupMove",
+			"width": 255,
+			"x": 864,
+			"y": 52
+		},
+		"USqhtqVYMsOZTLgsYT4mEHW4E7vbj0E0": {
+			"height": 100,
+			"title": "Movement vector",
+			"width": 450,
+			"x": 1042,
+			"y": -249
+		},
+		"YEA5nlSDEmvS37iynH2ApEKw6LRav4Up": {
+			"height": 90,
+			"title": "luaCondition",
+			"width": 194,
+			"x": 637,
+			"y": -67
+		},
+		"ZLDpCEceNO2N2Hb4OphHPxdXeUHerbW5": {
+			"height": 70,
+			"title": "roleSplit",
+			"width": 202,
+			"x": 392,
+			"y": 6
+		},
+		"eMBfN1oI9OKaXT5fTIW1y0akAnKxu7MD": {
+			"height": 54,
+			"title": "success",
+			"width": 132,
+			"x": 865,
+			"y": -21
+		},
+		"f9t30q4OMi66JZaNNCWsazvtiYKRo6EK": {
+			"height": 95,
+			"title": "Store Wind Position",
+			"width": 442,
+			"x": 1046,
+			"y": -342
+		},
+		"rYtzvoVj36pSO702OpDZd5c1FWne0IFt": {
+			"height": 58,
+			"title": "success",
+			"width": 228,
+			"x": 865,
+			"y": 130
+		},
+		"wf04Sf0HkTvbTn1pS3Ul75qI9PP5YU6z": {
+			"height": 90,
+			"title": "luaCondition",
+			"width": 194,
+			"x": 629,
+			"y": 64
+		}
+	},
+	"roles": [ {
+		"categories": [ "nota_vvancak_hla.commander" ],
+		"name": "Commander"
+	}, {
+		"categories": [ "nota_vvancak_hla.soldiers" ],
+		"name": "Soldiers"
+	} ],
+	"root": {
+		"children": [ {
+			"children": [ {
+				"children": [ {
+					"children": [ {
+						"children": [],
+						"id": "f9t30q4OMi66JZaNNCWsazvtiYKRo6EK",
+						"nodeType": "luaCommand",
+						"parameters": [ {
+							"name": "var",
+							"value": "wind"
+						}, {
+							"name": "value",
+							"value": "Vec3(map.Wind().normDirX, 0, map.Wind().normDirZ)"
+						}, {
+							"name": "scriptName",
+							"value": "store"
+						} ],
+						"scriptName": "store"
+					}, {
+						"children": [],
+						"id": "USqhtqVYMsOZTLgsYT4mEHW4E7vbj0E0",
+						"nodeType": "luaCommand",
+						"parameters": [ {
+							"name": "var",
+							"value": "move_vector"
+						}, {
+							"name": "value",
+							"value": "Vec3(70*wind.x, 0, 70*wind.z)"
+						}, {
+							"name": "scriptName",
+							"value": "store"
+						} ],
+						"scriptName": "store"
+					}, {
+						"children": [],
+						"id": "NX1CzpwSuFG0dtdomaqLxjVZcl61Ucgp",
+						"nodeType": "luaCommand",
+						"parameters": [ {
+							"name": "var",
+							"value": "_"
+						}, {
+							"name": "value",
+							"value": "nota_vvancak_hla.WindDebug()"
+						}, {
+							"name": "scriptName",
+							"value": "store"
+						} ],
+						"scriptName": "store"
+					}, {
+						"children": [],
+						"id": "HrumxsnSBwr59KTdUlwYNRbZNn5Cyf1H",
+						"nodeType": "luaCommand",
+						"parameters": [ {
+							"name": "dist",
+							"value": "move_vector"
+						}, {
+							"name": "fight",
+							"value": "false"
+						}, {
+							"name": "scriptName",
+							"value": "Common.relativeMove"
+						} ],
+						"scriptName": "Common.relativeMove"
+					} ],
+					"id": "F0Ch2iguSxpWv7qmtk0C9NmWqEF6XyaR",
+					"nodeType": "sequence",
+					"parameters": []
+				}, {
+					"children": [],
+					"id": "eMBfN1oI9OKaXT5fTIW1y0akAnKxu7MD",
+					"nodeType": "success",
+					"parameters": []
+				} ],
+				"id": "YEA5nlSDEmvS37iynH2ApEKw6LRav4Up",
+				"nodeType": "luaCondition",
+				"parameters": [ {
+					"name": "expression",
+					"value": "core.HaveUnits()"
+				}, {
+					"name": "repeat",
+					"value": "false"
+				} ]
+			}, {
+				"children": [ {
+					"children": [],
+					"id": "RAl8c8hnP1PBhP1uRdTQ0RI2v1qNXdXw",
+					"nodeType": "luaCommand",
+					"parameters": [ {
+						"name": "direction",
+						"value": "move_vector"
+					}, {
+						"name": "scriptName",
+						"value": "nota_vvancak_hla.GroupMove"
+					} ],
+					"scriptName": "nota_vvancak_hla.GroupMove"
+				}, {
+					"children": [],
+					"id": "rYtzvoVj36pSO702OpDZd5c1FWne0IFt",
+					"nodeType": "success",
+					"parameters": []
+				} ],
+				"id": "wf04Sf0HkTvbTn1pS3Ul75qI9PP5YU6z",
+				"nodeType": "luaCondition",
+				"parameters": [ {
+					"name": "expression",
+					"value": "core.HaveUnits()"
+				}, {
+					"name": "repeat",
+					"value": "false"
+				} ]
+			} ],
+			"id": "ZLDpCEceNO2N2Hb4OphHPxdXeUHerbW5",
+			"nodeType": "roleSplit",
+			"parameters": [ {
+				"name": "mode",
+				"value": "all-success"
+			} ]
+		} ],
+		"id": "QrEWPHROUvo3pO19iwxFgodKQSnO1sAA",
+		"nodeType": "repeat",
+		"parameters": []
+	}
+}
