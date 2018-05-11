@@ -13,85 +13,99 @@
 			"height": 60,
 			"title": "sequence",
 			"width": 143,
-			"x": 863,
-			"y": -93
+			"x": 1062,
+			"y": -45
 		},
 		"HrumxsnSBwr59KTdUlwYNRbZNn5Cyf1H": {
 			"height": 89,
 			"title": "Commander Move",
 			"width": 270,
-			"x": 1043,
-			"y": -59
+			"x": 1242,
+			"y": -11
+		},
+		"NIAAvduhgjqedXurXQJ6mvIAKkBMUeqQ": {
+			"height": 98,
+			"title": "Movement vector (default)",
+			"width": 261,
+			"x": 430,
+			"y": -53
 		},
 		"NX1CzpwSuFG0dtdomaqLxjVZcl61Ucgp": {
 			"height": 97,
 			"title": "Wind Pointer Debug",
 			"width": 451,
-			"x": 1043,
-			"y": -157
+			"x": 1242,
+			"y": -109
 		},
 		"QrEWPHROUvo3pO19iwxFgodKQSnO1sAA": {
 			"height": 60,
 			"title": "repeat",
 			"width": 131,
-			"x": 231,
-			"y": 10
+			"x": 432,
+			"y": 52
 		},
 		"RAl8c8hnP1PBhP1uRdTQ0RI2v1qNXdXw": {
 			"height": 74,
 			"title": "nota_vvancak_hla.GroupMove",
 			"width": 255,
-			"x": 864,
-			"y": 52
+			"x": 1063,
+			"y": 100
 		},
 		"USqhtqVYMsOZTLgsYT4mEHW4E7vbj0E0": {
 			"height": 100,
 			"title": "Movement vector",
 			"width": 450,
-			"x": 1042,
-			"y": -249
+			"x": 1242,
+			"y": -201
 		},
 		"YEA5nlSDEmvS37iynH2ApEKw6LRav4Up": {
 			"height": 90,
 			"title": "luaCondition",
 			"width": 194,
-			"x": 637,
-			"y": -67
+			"x": 836,
+			"y": -19
 		},
 		"ZLDpCEceNO2N2Hb4OphHPxdXeUHerbW5": {
 			"height": 70,
 			"title": "roleSplit",
 			"width": 202,
-			"x": 392,
-			"y": 6
+			"x": 595,
+			"y": 48
+		},
+		"ZmP06jHBFMc0O2izlqRsUq4FlcuSXpbi": {
+			"height": 60,
+			"title": "sequence",
+			"width": 143,
+			"x": 225,
+			"y": 10
 		},
 		"eMBfN1oI9OKaXT5fTIW1y0akAnKxu7MD": {
 			"height": 54,
 			"title": "success",
 			"width": 132,
-			"x": 865,
-			"y": -21
+			"x": 1064,
+			"y": 27
 		},
 		"f9t30q4OMi66JZaNNCWsazvtiYKRo6EK": {
 			"height": 95,
 			"title": "Store Wind Position",
 			"width": 442,
-			"x": 1046,
-			"y": -342
+			"x": 1245,
+			"y": -294
 		},
 		"rYtzvoVj36pSO702OpDZd5c1FWne0IFt": {
 			"height": 58,
 			"title": "success",
 			"width": 228,
-			"x": 865,
-			"y": 130
+			"x": 1064,
+			"y": 178
 		},
 		"wf04Sf0HkTvbTn1pS3Ul75qI9PP5YU6z": {
 			"height": 90,
 			"title": "luaCondition",
 			"width": 194,
-			"x": 629,
-			"y": 64
+			"x": 828,
+			"y": 112
 		}
 	},
 	"roles": [ {
@@ -103,125 +117,145 @@
 	} ],
 	"root": {
 		"children": [ {
+			"children": [],
+			"id": "NIAAvduhgjqedXurXQJ6mvIAKkBMUeqQ",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "var",
+				"value": "move_vector"
+			}, {
+				"name": "value",
+				"value": "Vec3(0,0,0)"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		}, {
 			"children": [ {
 				"children": [ {
 					"children": [ {
-						"children": [],
-						"id": "f9t30q4OMi66JZaNNCWsazvtiYKRo6EK",
-						"nodeType": "luaCommand",
-						"parameters": [ {
-							"name": "var",
-							"value": "wind"
+						"children": [ {
+							"children": [],
+							"id": "f9t30q4OMi66JZaNNCWsazvtiYKRo6EK",
+							"nodeType": "luaCommand",
+							"parameters": [ {
+								"name": "var",
+								"value": "wind"
+							}, {
+								"name": "value",
+								"value": "Vec3(map.Wind().normDirX, 0, map.Wind().normDirZ)"
+							}, {
+								"name": "scriptName",
+								"value": "store"
+							} ],
+							"scriptName": "store"
 						}, {
-							"name": "value",
-							"value": "Vec3(map.Wind().normDirX, 0, map.Wind().normDirZ)"
+							"children": [],
+							"id": "USqhtqVYMsOZTLgsYT4mEHW4E7vbj0E0",
+							"nodeType": "luaCommand",
+							"parameters": [ {
+								"name": "var",
+								"value": "move_vector"
+							}, {
+								"name": "value",
+								"value": "Vec3(70*wind.x, 0, 70*wind.z)"
+							}, {
+								"name": "scriptName",
+								"value": "store"
+							} ],
+							"scriptName": "store"
 						}, {
-							"name": "scriptName",
-							"value": "store"
+							"children": [],
+							"id": "NX1CzpwSuFG0dtdomaqLxjVZcl61Ucgp",
+							"nodeType": "luaCommand",
+							"parameters": [ {
+								"name": "var",
+								"value": "_"
+							}, {
+								"name": "value",
+								"value": "nota_vvancak_hla.WindDebug()"
+							}, {
+								"name": "scriptName",
+								"value": "store"
+							} ],
+							"scriptName": "store"
+						}, {
+							"children": [],
+							"id": "HrumxsnSBwr59KTdUlwYNRbZNn5Cyf1H",
+							"nodeType": "luaCommand",
+							"parameters": [ {
+								"name": "dist",
+								"value": "move_vector"
+							}, {
+								"name": "fight",
+								"value": "false"
+							}, {
+								"name": "scriptName",
+								"value": "Common.relativeMove"
+							} ],
+							"scriptName": "Common.relativeMove"
 						} ],
-						"scriptName": "store"
+						"id": "F0Ch2iguSxpWv7qmtk0C9NmWqEF6XyaR",
+						"nodeType": "sequence",
+						"parameters": []
 					}, {
 						"children": [],
-						"id": "USqhtqVYMsOZTLgsYT4mEHW4E7vbj0E0",
-						"nodeType": "luaCommand",
-						"parameters": [ {
-							"name": "var",
-							"value": "move_vector"
-						}, {
-							"name": "value",
-							"value": "Vec3(70*wind.x, 0, 70*wind.z)"
-						}, {
-							"name": "scriptName",
-							"value": "store"
-						} ],
-						"scriptName": "store"
-					}, {
-						"children": [],
-						"id": "NX1CzpwSuFG0dtdomaqLxjVZcl61Ucgp",
-						"nodeType": "luaCommand",
-						"parameters": [ {
-							"name": "var",
-							"value": "_"
-						}, {
-							"name": "value",
-							"value": "nota_vvancak_hla.WindDebug()"
-						}, {
-							"name": "scriptName",
-							"value": "store"
-						} ],
-						"scriptName": "store"
-					}, {
-						"children": [],
-						"id": "HrumxsnSBwr59KTdUlwYNRbZNn5Cyf1H",
-						"nodeType": "luaCommand",
-						"parameters": [ {
-							"name": "dist",
-							"value": "move_vector"
-						}, {
-							"name": "fight",
-							"value": "false"
-						}, {
-							"name": "scriptName",
-							"value": "Common.relativeMove"
-						} ],
-						"scriptName": "Common.relativeMove"
+						"id": "eMBfN1oI9OKaXT5fTIW1y0akAnKxu7MD",
+						"nodeType": "success",
+						"parameters": []
 					} ],
-					"id": "F0Ch2iguSxpWv7qmtk0C9NmWqEF6XyaR",
-					"nodeType": "sequence",
-					"parameters": []
-				}, {
-					"children": [],
-					"id": "eMBfN1oI9OKaXT5fTIW1y0akAnKxu7MD",
-					"nodeType": "success",
-					"parameters": []
-				} ],
-				"id": "YEA5nlSDEmvS37iynH2ApEKw6LRav4Up",
-				"nodeType": "luaCondition",
-				"parameters": [ {
-					"name": "expression",
-					"value": "core.HaveUnits()"
-				}, {
-					"name": "repeat",
-					"value": "false"
-				} ]
-			}, {
-				"children": [ {
-					"children": [],
-					"id": "RAl8c8hnP1PBhP1uRdTQ0RI2v1qNXdXw",
-					"nodeType": "luaCommand",
+					"id": "YEA5nlSDEmvS37iynH2ApEKw6LRav4Up",
+					"nodeType": "luaCondition",
 					"parameters": [ {
-						"name": "direction",
-						"value": "move_vector"
+						"name": "expression",
+						"value": "core.HaveUnits()"
 					}, {
-						"name": "scriptName",
-						"value": "nota_vvancak_hla.GroupMove"
+						"name": "repeat",
+						"value": "false"
+					} ]
+				}, {
+					"children": [ {
+						"children": [],
+						"id": "RAl8c8hnP1PBhP1uRdTQ0RI2v1qNXdXw",
+						"nodeType": "luaCommand",
+						"parameters": [ {
+							"name": "direction",
+							"value": "move_vector"
+						}, {
+							"name": "scriptName",
+							"value": "nota_vvancak_hla.GroupMove"
+						} ],
+						"scriptName": "nota_vvancak_hla.GroupMove"
+					}, {
+						"children": [],
+						"id": "rYtzvoVj36pSO702OpDZd5c1FWne0IFt",
+						"nodeType": "success",
+						"parameters": []
 					} ],
-					"scriptName": "nota_vvancak_hla.GroupMove"
-				}, {
-					"children": [],
-					"id": "rYtzvoVj36pSO702OpDZd5c1FWne0IFt",
-					"nodeType": "success",
-					"parameters": []
+					"id": "wf04Sf0HkTvbTn1pS3Ul75qI9PP5YU6z",
+					"nodeType": "luaCondition",
+					"parameters": [ {
+						"name": "expression",
+						"value": "core.HaveUnits()"
+					}, {
+						"name": "repeat",
+						"value": "false"
+					} ]
 				} ],
-				"id": "wf04Sf0HkTvbTn1pS3Ul75qI9PP5YU6z",
-				"nodeType": "luaCondition",
+				"id": "ZLDpCEceNO2N2Hb4OphHPxdXeUHerbW5",
+				"nodeType": "roleSplit",
 				"parameters": [ {
-					"name": "expression",
-					"value": "core.HaveUnits()"
-				}, {
-					"name": "repeat",
-					"value": "false"
+					"name": "mode",
+					"value": "all-success"
 				} ]
 			} ],
-			"id": "ZLDpCEceNO2N2Hb4OphHPxdXeUHerbW5",
-			"nodeType": "roleSplit",
-			"parameters": [ {
-				"name": "mode",
-				"value": "all-success"
-			} ]
+			"id": "QrEWPHROUvo3pO19iwxFgodKQSnO1sAA",
+			"nodeType": "repeat",
+			"parameters": []
 		} ],
-		"id": "QrEWPHROUvo3pO19iwxFgodKQSnO1sAA",
-		"nodeType": "repeat",
+		"id": "ZmP06jHBFMc0O2izlqRsUq4FlcuSXpbi",
+		"nodeType": "sequence",
 		"parameters": []
 	}
 }
