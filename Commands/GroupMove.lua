@@ -30,16 +30,6 @@ function Run(self, units, parameter)
 	if (self.target_set and #cmds == 0) then
 		self.target_set = false
 		return SUCCESS
-	-- check if movement is still running (i.e. leader not at his target position)
-	--[[if (self.target_set) then
-		local leader = units[1]
-		local unit_x, unit_y, unit_z = SpringGetUnitPosition(leader)
-		local leader_pos = Vec3(unit_x, unit_y, unit_z)
-
-		if (leader_pos:Distance(self.target_pos) > 10) then
-			Spring.Echo(leader_pos:Distance(self.target_pos))
-			return RUNNING;
-		end]]
 	
 	-- has taret set
 	elseif (self.target_set) then
