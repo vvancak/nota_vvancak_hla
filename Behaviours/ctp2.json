@@ -1,0 +1,170 @@
+{
+	"additionalNodes": [],
+	"additionalParameters": {
+		"root": {
+			"height": 88,
+			"width": 180
+		}
+	},
+	"inputs": [],
+	"outputs": [],
+	"properties": {
+		"FFy8hH2kMWYTUtC72LlZrXwIab19vGC0": {
+			"height": 60,
+			"title": "sequence",
+			"width": 143,
+			"x": 279,
+			"y": 10
+		},
+		"SaiGgCDPMU8x0kde4L84mUjr4ANmcaTb": {
+			"height": 94,
+			"title": "store",
+			"width": 336,
+			"x": 493,
+			"y": -184
+		},
+		"W9KRum4FUQsvyWjJZDaujAIqy70BEzos": {
+			"height": 70,
+			"title": "roleSplit",
+			"width": 202,
+			"x": 487,
+			"y": 44
+		},
+		"Xh0GYQ7FmDY8QrRyvj49LUtl4sjbYxhL": {
+			"height": 60,
+			"title": "sequence",
+			"width": 143,
+			"x": 756,
+			"y": 82
+		},
+		"gbhCIoOFYwxMhjl2rs3XRXQ7LhhhYhiC": {
+			"height": 72,
+			"title": "nota_vvancak_hla.GroupSplitMove",
+			"width": 326,
+			"x": 755,
+			"y": -8
+		},
+		"rgqqejyOkSgkT8Qw9lQPAbvsoRhbuKjw": {
+			"height": 94,
+			"title": "store",
+			"width": 309,
+			"x": 484,
+			"y": 156
+		},
+		"vO6CD41xZ5INPTMDIlH2UUSQdcPeI4go": {
+			"height": 93,
+			"title": "TODO: move heavy units to the defended hill",
+			"width": 366,
+			"x": 945,
+			"y": 70
+		},
+		"ytXoS4Vr5ZW3vq6dLmIUKV98MPQp7odU": {
+			"height": 94,
+			"title": "store",
+			"width": 340,
+			"x": 494,
+			"y": -96
+		}
+	},
+	"roles": [ {
+		"categories": [ "nota_vvancak_hla.soldiers" ],
+		"name": "peewe"
+	}, {
+		"categories": [ "nota_vvancak_hla.tanky_soldiers" ],
+		"name": "tanky_units"
+	}, {
+		"categories": [],
+		"name": "Role 2"
+	} ],
+	"root": {
+		"children": [ {
+			"children": [],
+			"id": "SaiGgCDPMU8x0kde4L84mUjr4ANmcaTb",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "var",
+				"value": "mission_info"
+			}, {
+				"name": "value",
+				"value": "core.MissionInfo()"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		}, {
+			"children": [],
+			"id": "ytXoS4Vr5ZW3vq6dLmIUKV98MPQp7odU",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "var",
+				"value": "hills"
+			}, {
+				"name": "value",
+				"value": "nota_vvancak_hla.GetHills()"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		}, {
+			"children": [ {
+				"children": [],
+				"id": "gbhCIoOFYwxMhjl2rs3XRXQ7LhhhYhiC",
+				"nodeType": "luaCommand",
+				"parameters": [ {
+					"name": "targets",
+					"value": "hills.undefended"
+				}, {
+					"name": "scriptName",
+					"value": "nota_vvancak_hla.GroupSplitMove"
+				} ],
+				"scriptName": "nota_vvancak_hla.GroupSplitMove"
+			}, {
+				"children": [ {
+					"children": [],
+					"id": "vO6CD41xZ5INPTMDIlH2UUSQdcPeI4go",
+					"nodeType": "luaCommand",
+					"parameters": [ {
+						"name": "var",
+						"value": "_"
+					}, {
+						"name": "value",
+						"value": "hills.defended[1]"
+					}, {
+						"name": "scriptName",
+						"value": "store"
+					} ],
+					"scriptName": "store"
+				} ],
+				"id": "Xh0GYQ7FmDY8QrRyvj49LUtl4sjbYxhL",
+				"nodeType": "sequence",
+				"parameters": []
+			} ],
+			"id": "W9KRum4FUQsvyWjJZDaujAIqy70BEzos",
+			"nodeType": "roleSplit",
+			"parameters": [ {
+				"name": "mode",
+				"value": "all-success"
+			} ]
+		}, {
+			"children": [],
+			"id": "rgqqejyOkSgkT8Qw9lQPAbvsoRhbuKjw",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "var",
+				"value": "_"
+			}, {
+				"name": "value",
+				"value": "nota_vvancak_hla.EndGame()"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		} ],
+		"id": "FFy8hH2kMWYTUtC72LlZrXwIab19vGC0",
+		"nodeType": "sequence",
+		"parameters": []
+	}
+}
