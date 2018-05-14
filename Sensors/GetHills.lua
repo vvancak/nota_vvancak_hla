@@ -1,8 +1,8 @@
 local sensorInfo = {
-	name = "WindDebug",
-	desc = "Draws wind pointer from the unit",
+	name = "GetHills",
+	desc = "Finds hills; Returns undefended and defended hills",
 	author = "vvancak",
-	date = "2017-05-16",
+	date = "2018-05-14",
 	license = "notAlicense",
 }
 
@@ -40,7 +40,7 @@ return function()
 					
 					-- if yes, average the hill central point
 					if (hills[i]:Distance(potential_point) < HILL_RADIUS) then
-						hills[i] = hills[i] + (potential_point - hills[i]) * 1/4						
+						hills[i] = hills[i] + (potential_point - hills[i]) * 0.1						
 						near_point_found = true
 					end
 				end
