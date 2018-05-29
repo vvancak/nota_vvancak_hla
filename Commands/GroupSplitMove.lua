@@ -28,7 +28,7 @@ function Run(self, units, parameter)
 	-- collect commands for units
 	local cmds = 0
 	for i = 1, #units do
-		local unit_cmds = SpringGetUnitCommands(units[i])
+		local unit_cmds = SpringGetUnitCommands(units[i], 1)
 		cmds = cmds + (#unit_cmds)
 	end
 	

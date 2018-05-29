@@ -24,7 +24,7 @@ end
 
 function Run(self, units, parameter)
 	local direction = parameter.direction -- Vec3
-	local cmds = SpringGetUnitCommands(units[1])
+	local cmds = SpringGetUnitCommands(units[1], 1)
 	
 	-- has target set and commands
 	if (self.target_set and #cmds == 0) then

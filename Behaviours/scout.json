@@ -1,0 +1,196 @@
+{
+	"additionalNodes": [],
+	"additionalParameters": {
+		"root": {
+			"height": 112,
+			"width": 180
+		}
+	},
+	"inputs": [],
+	"outputs": [ {
+		"name": "enemy_positions"
+	} ],
+	"properties": {
+		"0p4HQ3JAvlpJ6an2VUVJObqxBZ1dIv9S": {
+			"height": 92,
+			"title": "Positions of the enemies",
+			"width": 425,
+			"x": 470,
+			"y": -275
+		},
+		"OwMiTYyrfK0YnWlc8cxToLQ5lItZlwV9": {
+			"height": 91,
+			"title": "Scout - GroupMove across the map",
+			"width": 336,
+			"x": 760,
+			"y": 2
+		},
+		"Rb9bD5tSPggg9LGpUvNgE92tK4C6vkug": {
+			"height": 72,
+			"title": "Group Split Move",
+			"width": 326,
+			"x": 470,
+			"y": -83
+		},
+		"c0btRX2Re6OgLkjdCCKaw4GpfVZIJZ3n": {
+			"height": 54,
+			"title": "success",
+			"width": 132,
+			"x": 1235,
+			"y": 150
+		},
+		"cPTA7ycFtwenjzmsMelWMC3fsnArG9Xa": {
+			"height": 95,
+			"title": "Store Currently Visible Enemy Units Positions",
+			"width": 614,
+			"x": 1232,
+			"y": 53
+		},
+		"eFegij5ks8mlxnxQLiEHOvsCm2aiRwju": {
+			"height": 70,
+			"title": "Main Scouting Routine",
+			"width": 224,
+			"x": 478,
+			"y": 83
+		},
+		"iIWJt2dJKpLEnzZ7PYHCdLnsRXLFw7Qw": {
+			"height": 60,
+			"title": "sequence",
+			"width": 144,
+			"x": 254,
+			"y": 18
+		},
+		"q3sI69PwjNL07ZgKLBgJnyM8fRigKltv": {
+			"height": 96,
+			"title": "Positions along the top corner of the map",
+			"width": 439,
+			"x": 469,
+			"y": -184
+		},
+		"xtGX84UYTAjIj16yzpTZUmj9c0mDAFia": {
+			"height": 90,
+			"title": "Check Have Units",
+			"width": 194,
+			"x": 949,
+			"y": 101
+		},
+		"ya69yRiBcm6uo2L8lk5qQQ0NIlVxOzbk": {
+			"height": 60,
+			"title": "repeat",
+			"width": 131,
+			"x": 760,
+			"y": 113
+		}
+	},
+	"roles": [ {
+		"categories": [ "nota_vvancak_hla.scouts" ],
+		"name": "scouts"
+	}, {
+		"categories": [ "nota_vvancak_hla.transport" ],
+		"name": "transport"
+	} ],
+	"root": {
+		"children": [ {
+			"children": [],
+			"id": "0p4HQ3JAvlpJ6an2VUVJObqxBZ1dIv9S",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "var",
+				"value": "enemy_positions"
+			}, {
+				"name": "value",
+				"value": "{}"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		}, {
+			"children": [],
+			"id": "q3sI69PwjNL07ZgKLBgJnyM8fRigKltv",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "var",
+				"value": "starting_pos"
+			}, {
+				"name": "value",
+				"value": "nota_vvancak_hla.GenerateScoutingStartingPos(#units)"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		}, {
+			"children": [],
+			"id": "Rb9bD5tSPggg9LGpUvNgE92tK4C6vkug",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "targets",
+				"value": "starting_pos"
+			}, {
+				"name": "scriptName",
+				"value": "nota_vvancak_hla.GroupSplitMove"
+			} ],
+			"scriptName": "nota_vvancak_hla.GroupSplitMove"
+		}, {
+			"children": [ {
+				"children": [],
+				"id": "OwMiTYyrfK0YnWlc8cxToLQ5lItZlwV9",
+				"nodeType": "luaCommand",
+				"parameters": [ {
+					"name": "direction",
+					"value": "Vec3(0,0,Game.mapSizeZ * 0.8)"
+				}, {
+					"name": "scriptName",
+					"value": "nota_vvancak_hla.GroupMove"
+				} ],
+				"scriptName": "nota_vvancak_hla.GroupMove"
+			}, {
+				"children": [ {
+					"children": [ {
+						"children": [],
+						"id": "cPTA7ycFtwenjzmsMelWMC3fsnArG9Xa",
+						"nodeType": "luaCommand",
+						"parameters": [ {
+							"name": "var",
+							"value": "_"
+						}, {
+							"name": "value",
+							"value": "nota_vvancak_hla.PopulateEnemyPositions(enemy_positions, core.EnemyUnits())"
+						}, {
+							"name": "scriptName",
+							"value": "store"
+						} ],
+						"scriptName": "store"
+					}, {
+						"children": [],
+						"id": "c0btRX2Re6OgLkjdCCKaw4GpfVZIJZ3n",
+						"nodeType": "success",
+						"parameters": []
+					} ],
+					"id": "xtGX84UYTAjIj16yzpTZUmj9c0mDAFia",
+					"nodeType": "luaCondition",
+					"parameters": [ {
+						"name": "expression",
+						"value": "core.HaveUnits()"
+					}, {
+						"name": "repeat",
+						"value": "true"
+					} ]
+				} ],
+				"id": "ya69yRiBcm6uo2L8lk5qQQ0NIlVxOzbk",
+				"nodeType": "repeat",
+				"parameters": []
+			} ],
+			"id": "eFegij5ks8mlxnxQLiEHOvsCm2aiRwju",
+			"nodeType": "parallel",
+			"parameters": [ {
+				"name": "mode",
+				"value": "any-success"
+			} ]
+		} ],
+		"id": "iIWJt2dJKpLEnzZ7PYHCdLnsRXLFw7Qw",
+		"nodeType": "sequence",
+		"parameters": []
+	}
+}
