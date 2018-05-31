@@ -1,130 +1,135 @@
 {
-	"additionalNodes": [ {
-		"children": [ {
-			"children": [],
-			"id": "d7XCdZIL1cVXQ8se0Q12Wh2bwpXBRSHl",
-			"nodeType": "reference",
-			"parameters": [ {
-				"name": "behaviourName",
-				"value": "nota_vvancak_hla.scout"
-			} ],
-			"referenceInputs": [],
-			"referenceOutputs": [ {
-				"name": "enemy_positions",
-				"value": "enemy_positions"
-			} ]
-		}, {
-			"children": [],
-			"id": "rIogf8zjk6axZOOW4HLk1icq8NYYYK90",
-			"nodeType": "success",
-			"parameters": []
-		} ],
-		"id": "dkXyCsKvAXtcgtCoh3MNFARrpdvEh5qc",
-		"nodeType": "roleSplit",
-		"parameters": [ {
-			"name": "mode",
-			"value": "all-success"
-		} ]
-	} ],
+	"additionalNodes": [],
 	"additionalParameters": {
 		"root": {
 			"height": 108,
-			"width": 216
+			"width": 273
 		}
 	},
-	"inputs": [],
+	"inputs": [ {
+		"command": "BETS_POSITION",
+		"name": "search_start_place"
+	} ],
 	"outputs": [],
 	"properties": {
+		"0OjJcBxfnqTb6J6JvOuAOzxzeFHjFD1h": {
+			"height": 54,
+			"title": "success",
+			"width": 132,
+			"x": 852,
+			"y": 491
+		},
+		"1gJSTDRJnC9MGzPNF5aj5i6VqqkbICdM": {
+			"height": 60,
+			"title": "II. Pathfinding",
+			"width": 169,
+			"x": 563,
+			"y": 17
+		},
 		"49MDgdanx8lOBs7hfE45q9CY1WdXu0vU": {
 			"height": 94,
 			"title": "GarbageCollection II",
 			"width": 469,
-			"x": 592,
-			"y": 318
+			"x": 892,
+			"y": 144
 		},
 		"5AIH8r2vn51B5YTimyM9TPN8mBKxgHcY": {
 			"height": 94,
 			"title": "GarbageCollection I",
 			"width": 469,
-			"x": 594,
-			"y": 101
+			"x": 890,
+			"y": -55
 		},
-		"9JjpDEs7pHTWJKy8f3CqqTB1TVy31hDS": {
+		"7gOfVXnWgl6LyDxibGoUYTHAgLs3cCnG": {
 			"height": 94,
-			"title": "store",
-			"width": 603,
-			"x": 1382,
-			"y": -58
+			"title": "IV. Exit",
+			"width": 277,
+			"x": 579,
+			"y": 588
 		},
 		"EIdMV7OWd9lItNDnYoQDJUAEF5AURj9h": {
 			"height": 94,
 			"title": "Generate Navigation network",
-			"width": 683,
-			"x": 595,
-			"y": 210
+			"width": 737,
+			"x": 889,
+			"y": 46
+		},
+		"OLP6ySDundSUGv5mowAidzKbq8IrT0uc": {
+			"height": 172,
+			"title": "nota_vvancak_hla.RescueUnits",
+			"width": 339,
+			"x": 850,
+			"y": 317
 		},
 		"SVSWCT47SdY7OUDbxkkT176Jj1kdlmsm": {
 			"height": 94,
 			"title": "Generate Threat network",
-			"width": 469,
-			"x": 593,
-			"y": -3
-		},
-		"YsuZTDXw70XRq1C9vyXQ5Gjsd08HucJU": {
-			"height": 132,
-			"title": "nota_vvancak_hla.RescueUnits",
-			"width": 290,
-			"x": 593,
-			"y": 444
+			"width": 555,
+			"x": 891,
+			"y": -160
 		},
 		"bPxuVLf1BAvCVSrW5I0WcmbV8ccrbykx": {
 			"height": 60,
 			"title": "sequence",
 			"width": 143,
-			"x": 300,
-			"y": 153
+			"x": 316,
+			"y": 17
 		},
 		"d7XCdZIL1cVXQ8se0Q12Wh2bwpXBRSHl": {
 			"height": 131,
 			"title": "reference",
 			"width": 324,
-			"x": 978,
-			"y": -219
+			"x": 886,
+			"y": -460
 		},
 		"dkXyCsKvAXtcgtCoh3MNFARrpdvEh5qc": {
 			"height": 70,
 			"title": "I. Scouting phase",
 			"width": 202,
-			"x": 713,
-			"y": -142
+			"x": 568,
+			"y": -357
 		},
-		"ktnap9acECyjoyfX00VMZVbrpd7vxOuz": {
-			"height": 96,
-			"title": "store",
-			"width": 239,
-			"x": 1376,
-			"y": -157
+		"ft9IU0ilGQpkZwkpibyJAJYhrwTw2K5G": {
+			"height": 54,
+			"title": "success",
+			"width": 132,
+			"x": 853,
+			"y": 263
+		},
+		"pVgUNWoyzwZvNKMENntJqXcqXgxPJK8C": {
+			"height": 70,
+			"title": "III. Rescue",
+			"width": 202,
+			"x": 571,
+			"y": 360
 		},
 		"qH52SD700yc8UYADjZ00rrBdOSM5P2xW": {
 			"height": 94,
-			"title": "store",
+			"title": "0. Mission Info (helper)",
 			"width": 323,
-			"x": 705,
-			"y": -411
+			"x": 563,
+			"y": -670
 		},
 		"rIogf8zjk6axZOOW4HLk1icq8NYYYK90": {
 			"height": 54,
 			"title": "success",
 			"width": 132,
-			"x": 984,
-			"y": -81
+			"x": 886,
+			"y": -318
 		},
 		"thjzjv7HtMZtAguvpwite6JGQVAIjeKv": {
 			"height": 94,
 			"title": "store",
 			"width": 326,
-			"x": 705,
-			"y": -322
+			"x": 888,
+			"y": -256
+		},
+		"xfnjZH8bnWVjqJ0EuQbeFQNdlnGfLXrE": {
+			"height": 94,
+			"title": "0. edge_size (helper)",
+			"width": 323,
+			"x": 562,
+			"y": -556
 		}
 	},
 	"roles": [ {
@@ -155,130 +160,185 @@
 			"scriptName": "store"
 		}, {
 			"children": [],
-			"id": "thjzjv7HtMZtAguvpwite6JGQVAIjeKv",
+			"id": "xfnjZH8bnWVjqJ0EuQbeFQNdlnGfLXrE",
 			"nodeType": "luaCommand",
 			"parameters": [ {
 				"name": "var",
-				"value": "stranded_units"
+				"value": "EDGE_SIZE"
 			}, {
 				"name": "value",
-				"value": "nota_vvancak_hla.GetStrandedUnits()"
+				"value": "200"
 			}, {
 				"name": "scriptName",
 				"value": "store"
 			} ],
 			"scriptName": "store"
 		}, {
-			"children": [],
-			"id": "ktnap9acECyjoyfX00VMZVbrpd7vxOuz",
-			"nodeType": "luaCommand",
-			"parameters": [ {
-				"name": "var",
-				"value": "enemy_positions"
+			"children": [ {
+				"children": [],
+				"id": "d7XCdZIL1cVXQ8se0Q12Wh2bwpXBRSHl",
+				"nodeType": "reference",
+				"parameters": [ {
+					"name": "behaviourName",
+					"value": "nota_vvancak_hla.scout"
+				} ],
+				"referenceInputs": [],
+				"referenceOutputs": [ {
+					"name": "enemy_positions",
+					"value": "enemy_positions"
+				} ]
 			}, {
-				"name": "value",
-				"value": "{}"
+				"children": [],
+				"id": "rIogf8zjk6axZOOW4HLk1icq8NYYYK90",
+				"nodeType": "success",
+				"parameters": []
 			}, {
-				"name": "scriptName",
-				"value": "store"
+				"children": [],
+				"id": "thjzjv7HtMZtAguvpwite6JGQVAIjeKv",
+				"nodeType": "luaCommand",
+				"parameters": [ {
+					"name": "var",
+					"value": "stranded_units"
+				}, {
+					"name": "value",
+					"value": "nota_vvancak_hla.GetStrandedUnits()"
+				}, {
+					"name": "scriptName",
+					"value": "store"
+				} ],
+				"scriptName": "store"
 			} ],
-			"scriptName": "store"
+			"id": "dkXyCsKvAXtcgtCoh3MNFARrpdvEh5qc",
+			"nodeType": "roleSplit",
+			"parameters": [ {
+				"name": "mode",
+				"value": "all-success"
+			} ]
+		}, {
+			"children": [ {
+				"children": [],
+				"id": "SVSWCT47SdY7OUDbxkkT176Jj1kdlmsm",
+				"nodeType": "luaCommand",
+				"parameters": [ {
+					"name": "var",
+					"value": "threat_network"
+				}, {
+					"name": "value",
+					"value": "nota_vvancak_hla.GetThreatNetwork(enemy_positions, 50, EDGE_SIZE)"
+				}, {
+					"name": "scriptName",
+					"value": "store"
+				} ],
+				"scriptName": "store"
+			}, {
+				"children": [],
+				"id": "5AIH8r2vn51B5YTimyM9TPN8mBKxgHcY",
+				"nodeType": "luaCommand",
+				"parameters": [ {
+					"name": "var",
+					"value": "enemy_positions"
+				}, {
+					"name": "value",
+					"value": "nil"
+				}, {
+					"name": "scriptName",
+					"value": "store"
+				} ],
+				"scriptName": "store"
+			}, {
+				"children": [],
+				"id": "EIdMV7OWd9lItNDnYoQDJUAEF5AURj9h",
+				"nodeType": "luaCommand",
+				"parameters": [ {
+					"name": "var",
+					"value": "navigation_graph"
+				}, {
+					"name": "value",
+					"value": "nota_vvancak_hla.CreateNavigationGraph(search_start_place, threat_network, EDGE_SIZE)"
+				}, {
+					"name": "scriptName",
+					"value": "store"
+				} ],
+				"scriptName": "store"
+			}, {
+				"children": [],
+				"id": "49MDgdanx8lOBs7hfE45q9CY1WdXu0vU",
+				"nodeType": "luaCommand",
+				"parameters": [ {
+					"name": "var",
+					"value": "threat_network"
+				}, {
+					"name": "value",
+					"value": "nil"
+				}, {
+					"name": "scriptName",
+					"value": "store"
+				} ],
+				"scriptName": "store"
+			} ],
+			"id": "1gJSTDRJnC9MGzPNF5aj5i6VqqkbICdM",
+			"nodeType": "sequence",
+			"parameters": []
+		}, {
+			"children": [ {
+				"children": [],
+				"id": "ft9IU0ilGQpkZwkpibyJAJYhrwTw2K5G",
+				"nodeType": "success",
+				"parameters": []
+			}, {
+				"children": [],
+				"id": "OLP6ySDundSUGv5mowAidzKbq8IrT0uc",
+				"nodeType": "luaCommand",
+				"parameters": [ {
+					"name": "navigation_graph",
+					"value": "navigation_graph"
+				}, {
+					"name": "edge_size",
+					"value": "EDGE_SIZE"
+				}, {
+					"name": "search_start_place",
+					"value": "search_start_place"
+				}, {
+					"name": "safe_spot_place",
+					"value": "mission_info.safeArea.center"
+				}, {
+					"name": "safe_spot_radius",
+					"value": "mission_info.safeArea.radius"
+				}, {
+					"name": "stranded_units",
+					"value": "stranded_units"
+				}, {
+					"name": "scriptName",
+					"value": "nota_vvancak_hla.RescueUnits"
+				} ],
+				"scriptName": "nota_vvancak_hla.RescueUnits"
+			}, {
+				"children": [],
+				"id": "0OjJcBxfnqTb6J6JvOuAOzxzeFHjFD1h",
+				"nodeType": "success",
+				"parameters": []
+			} ],
+			"id": "pVgUNWoyzwZvNKMENntJqXcqXgxPJK8C",
+			"nodeType": "roleSplit",
+			"parameters": [ {
+				"name": "mode",
+				"value": "all-success"
+			} ]
 		}, {
 			"children": [],
-			"id": "9JjpDEs7pHTWJKy8f3CqqTB1TVy31hDS",
+			"id": "7gOfVXnWgl6LyDxibGoUYTHAgLs3cCnG",
 			"nodeType": "luaCommand",
 			"parameters": [ {
 				"name": "var",
 				"value": "_"
 			}, {
 				"name": "value",
-				"value": "nota_vvancak_hla.PopulateEnemyPositions(enemy_positions, core.EnemyUnits())"
+				"value": "nota_vvancak_hla.EndGame()"
 			}, {
 				"name": "scriptName",
 				"value": "store"
 			} ],
 			"scriptName": "store"
-		}, {
-			"children": [],
-			"id": "SVSWCT47SdY7OUDbxkkT176Jj1kdlmsm",
-			"nodeType": "luaCommand",
-			"parameters": [ {
-				"name": "var",
-				"value": "threat_network"
-			}, {
-				"name": "value",
-				"value": "nota_vvancak_hla.GetThreatNetwork(enemy_positions, 150)"
-			}, {
-				"name": "scriptName",
-				"value": "store"
-			} ],
-			"scriptName": "store"
-		}, {
-			"children": [],
-			"id": "5AIH8r2vn51B5YTimyM9TPN8mBKxgHcY",
-			"nodeType": "luaCommand",
-			"parameters": [ {
-				"name": "var",
-				"value": "enemy_positions"
-			}, {
-				"name": "value",
-				"value": "nil"
-			}, {
-				"name": "scriptName",
-				"value": "store"
-			} ],
-			"scriptName": "store"
-		}, {
-			"children": [],
-			"id": "EIdMV7OWd9lItNDnYoQDJUAEF5AURj9h",
-			"nodeType": "luaCommand",
-			"parameters": [ {
-				"name": "var",
-				"value": "threat_network"
-			}, {
-				"name": "value",
-				"value": "nota_vvancak_hla.CreateNavigationGraph(mission_info.safeArea.center, threat_network, 150)"
-			}, {
-				"name": "scriptName",
-				"value": "store"
-			} ],
-			"scriptName": "store"
-		}, {
-			"children": [],
-			"id": "49MDgdanx8lOBs7hfE45q9CY1WdXu0vU",
-			"nodeType": "luaCommand",
-			"parameters": [ {
-				"name": "var",
-				"value": "threat_network"
-			}, {
-				"name": "value",
-				"value": "nil"
-			}, {
-				"name": "scriptName",
-				"value": "store"
-			} ],
-			"scriptName": "store"
-		}, {
-			"children": [],
-			"id": "YsuZTDXw70XRq1C9vyXQ5Gjsd08HucJU",
-			"nodeType": "luaCommand",
-			"parameters": [ {
-				"name": "enemy_positions",
-				"value": "<position table here>"
-			}, {
-				"name": "safe_spot_place",
-				"value": "<position here>"
-			}, {
-				"name": "safe_spot_radius",
-				"value": "100"
-			}, {
-				"name": "stranded_units",
-				"value": "<unit id array here>"
-			}, {
-				"name": "scriptName",
-				"value": "nota_vvancak_hla.RescueUnits"
-			} ],
-			"scriptName": "nota_vvancak_hla.RescueUnits"
 		} ],
 		"id": "bPxuVLf1BAvCVSrW5I0WcmbV8ccrbykx",
 		"nodeType": "sequence",

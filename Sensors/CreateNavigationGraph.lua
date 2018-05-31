@@ -67,14 +67,15 @@ function IsPosOnMap(position)
 end
 
 -- DFS
-dx = { 0, 0, 1, -1 }
-dz = { 1, -1, 0, 0 }
+dx = { 0, 0, 1, -1, 1, 1, -1, -1 }
+dz = { 1, -1, 0, 0, 1, -1, 1, -1 }
 
 function ExpandPosition(node, edge_size)
     neighbours = {}
     for i = 1, #dx do
         local next_node = node + (Vec3(dx[i], 0, dz[i]) * edge_size)
-        Spring.Echo("DFS: Adding position ".. node.x .." " .. node.z)
+        next_node.y = SpringGetGroundHeight(next_node.x, next_node.z)
+
         if IsPosOnMap(next_node) then
             table.insert(neighbours, next_node)
         end
@@ -87,8 +88,6 @@ function DFS(from, threat_network, edge_size)
 
     local queue = List.new()
     List.pushleft(queue, from)
-
-    Spring.Echo("DFS start")
 
     -- main queue cycle
     while List.size(queue) > 0 do
@@ -118,9 +117,9 @@ function DFS(from, threat_network, edge_size)
                     -- and debugging stuff
                     if (Script.LuaUI('drawCross_update')) then
                         Script.LuaUI.drawCross_update({
-                            x = x,
-                            y = SpringGetGroundHeight(x,z),
-                            z = z,
+                            x = neighbour.x,
+                            y = neighbour.y,
+                            z = neighbour.z,
                             color = { r = 0, g = 1, b = 0 }
                         })
                     end
@@ -138,7 +137,8 @@ return function(from, threat_network, edge_size)
 
     local from_x = math.floor(from.x / edge_size) * edge_size
     local from_z = math.floor(from.z / edge_size) * edge_size
-    local start = Vec3(from_x, 0, from_z)
+    local from_y = SpringGetGroundHeight(from_x, from_z)
+    local start = Vec3(from_x, from_y, from_z)
 
     return DFS(start, threat_network, edge_size)
 end
