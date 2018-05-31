@@ -1,104 +1,130 @@
 {
-	"additionalNodes": [],
+	"additionalNodes": [ {
+		"children": [ {
+			"children": [],
+			"id": "d7XCdZIL1cVXQ8se0Q12Wh2bwpXBRSHl",
+			"nodeType": "reference",
+			"parameters": [ {
+				"name": "behaviourName",
+				"value": "nota_vvancak_hla.scout"
+			} ],
+			"referenceInputs": [],
+			"referenceOutputs": [ {
+				"name": "enemy_positions",
+				"value": "enemy_positions"
+			} ]
+		}, {
+			"children": [],
+			"id": "rIogf8zjk6axZOOW4HLk1icq8NYYYK90",
+			"nodeType": "success",
+			"parameters": []
+		} ],
+		"id": "dkXyCsKvAXtcgtCoh3MNFARrpdvEh5qc",
+		"nodeType": "roleSplit",
+		"parameters": [ {
+			"name": "mode",
+			"value": "all-success"
+		} ]
+	} ],
 	"additionalParameters": {
 		"root": {
-			"height": 88,
-			"width": 180
+			"height": 108,
+			"width": 216
 		}
 	},
 	"inputs": [],
 	"outputs": [],
 	"properties": {
-		"6YtBOoCNPjT1ASZik9Z2iwK816nsDQoJ": {
-			"height": 70,
-			"title": "parallel",
-			"width": 202,
-			"x": 928,
-			"y": -296
+		"49MDgdanx8lOBs7hfE45q9CY1WdXu0vU": {
+			"height": 94,
+			"title": "GarbageCollection II",
+			"width": 469,
+			"x": 592,
+			"y": 318
 		},
-		"9Uqd6v4m3mAhaPES9PYll7tONJ2852yb": {
-			"height": 96,
+		"5AIH8r2vn51B5YTimyM9TPN8mBKxgHcY": {
+			"height": 94,
+			"title": "GarbageCollection I",
+			"width": 469,
+			"x": 594,
+			"y": 101
+		},
+		"9JjpDEs7pHTWJKy8f3CqqTB1TVy31hDS": {
+			"height": 94,
 			"title": "store",
-			"width": 330,
-			"x": 909,
-			"y": -473
+			"width": 603,
+			"x": 1382,
+			"y": -58
 		},
-		"9tfoLadh3wTyEK3fN2wnObiTYkGuuxwR": {
-			"height": 74,
-			"title": "Queue Group Move",
-			"width": 312,
-			"x": 1185,
-			"y": -363
+		"EIdMV7OWd9lItNDnYoQDJUAEF5AURj9h": {
+			"height": 94,
+			"title": "Generate Navigation network",
+			"width": 683,
+			"x": 595,
+			"y": 210
 		},
-		"Db38LepyYPpsQZGquEIxyhH543wxJuBm": {
-			"height": 90,
-			"title": "luaCondition",
-			"width": 194,
-			"x": 1358,
-			"y": -263
+		"SVSWCT47SdY7OUDbxkkT176Jj1kdlmsm": {
+			"height": 94,
+			"title": "Generate Threat network",
+			"width": 469,
+			"x": 593,
+			"y": -3
 		},
-		"EgzSGhlbcpZ75xAtyQGRnEI9DZwMcytw": {
-			"height": 54,
-			"title": "success",
-			"width": 132,
-			"x": 1597,
-			"y": -203
+		"YsuZTDXw70XRq1C9vyXQ5Gjsd08HucJU": {
+			"height": 132,
+			"title": "nota_vvancak_hla.RescueUnits",
+			"width": 290,
+			"x": 593,
+			"y": 444
 		},
-		"Gyn6i6p5reLrfDzk1BNeNbvHePeMtNU4": {
-			"height": 92,
-			"title": "Pathfinding computation",
-			"width": 296,
-			"x": 470,
-			"y": -2
-		},
-		"O2Q95eKpeKCZxq2kT0vlG3dfeiD3T6Rz": {
-			"height": 70,
-			"title": "II. Rescue phase",
-			"width": 202,
-			"x": 470,
-			"y": 170
-		},
-		"UCEXoS8s3u7eSyyeeDfaZzUFMIa5QAjO": {
-			"height": 98,
-			"title": "Store Visible Enemy Units",
-			"width": 312,
-			"x": 1592,
-			"y": -312
-		},
-		"W8BNtT8P5ahpxrPSjpKDpLla8XHov3Cd": {
+		"bPxuVLf1BAvCVSrW5I0WcmbV8ccrbykx": {
 			"height": 60,
 			"title": "sequence",
 			"width": 143,
-			"x": 724,
-			"y": -208
+			"x": 300,
+			"y": 153
 		},
-		"ZpN2P9xiM6je09C6Hfwsrr6SDEQTlbsu": {
-			"height": 60,
-			"title": "sequence",
-			"width": 143,
-			"x": 259,
-			"y": 10
+		"d7XCdZIL1cVXQ8se0Q12Wh2bwpXBRSHl": {
+			"height": 131,
+			"title": "reference",
+			"width": 324,
+			"x": 978,
+			"y": -219
 		},
 		"dkXyCsKvAXtcgtCoh3MNFARrpdvEh5qc": {
 			"height": 70,
 			"title": "I. Scouting phase",
 			"width": 202,
-			"x": 472,
-			"y": -147
+			"x": 713,
+			"y": -142
+		},
+		"ktnap9acECyjoyfX00VMZVbrpd7vxOuz": {
+			"height": 96,
+			"title": "store",
+			"width": 239,
+			"x": 1376,
+			"y": -157
+		},
+		"qH52SD700yc8UYADjZ00rrBdOSM5P2xW": {
+			"height": 94,
+			"title": "store",
+			"width": 323,
+			"x": 705,
+			"y": -411
 		},
 		"rIogf8zjk6axZOOW4HLk1icq8NYYYK90": {
 			"height": 54,
 			"title": "success",
 			"width": 132,
-			"x": 720,
-			"y": -86
+			"x": 984,
+			"y": -81
 		},
-		"z6mHH8TNSITIkdXrLnGYSZtpjc72xZ8D": {
-			"height": 60,
-			"title": "repeat",
-			"width": 131,
-			"x": 1185,
-			"y": -252
+		"thjzjv7HtMZtAguvpwite6JGQVAIjeKv": {
+			"height": 94,
+			"title": "store",
+			"width": 326,
+			"x": 705,
+			"y": -322
 		}
 	},
 	"roles": [ {
@@ -107,104 +133,93 @@
 	}, {
 		"categories": [ "nota_vvancak_hla.transport" ],
 		"name": "transport"
+	}, {
+		"categories": [],
+		"name": "rest"
 	} ],
 	"root": {
 		"children": [ {
-			"children": [ {
-				"children": [ {
-					"children": [],
-					"id": "9Uqd6v4m3mAhaPES9PYll7tONJ2852yb",
-					"nodeType": "luaCommand",
-					"parameters": [ {
-						"name": "var",
-						"value": "x"
-					}, {
-						"name": "value",
-						"value": "{}"
-					}, {
-						"name": "scriptName",
-						"value": "store"
-					} ],
-					"scriptName": "store"
-				}, {
-					"children": [ {
-						"children": [],
-						"id": "9tfoLadh3wTyEK3fN2wnObiTYkGuuxwR",
-						"nodeType": "luaCommand",
-						"parameters": [ {
-							"name": "direction",
-							"value": "Vec3(0,0,Game.mapSizeZ * 0.9)"
-						}, {
-							"name": "scriptName",
-							"value": "nota_vvancak_hla.QueueGroupMove"
-						} ],
-						"scriptName": "nota_vvancak_hla.QueueGroupMove"
-					}, {
-						"children": [ {
-							"children": [ {
-								"children": [],
-								"id": "UCEXoS8s3u7eSyyeeDfaZzUFMIa5QAjO",
-								"nodeType": "luaCommand",
-								"parameters": [ {
-									"name": "var",
-									"value": "_"
-								}, {
-									"name": "value",
-									"value": "table.insert(x, core.EnemyUnits())"
-								}, {
-									"name": "scriptName",
-									"value": "store"
-								} ],
-								"scriptName": "store"
-							}, {
-								"children": [],
-								"id": "EgzSGhlbcpZ75xAtyQGRnEI9DZwMcytw",
-								"nodeType": "success",
-								"parameters": []
-							} ],
-							"id": "Db38LepyYPpsQZGquEIxyhH543wxJuBm",
-							"nodeType": "luaCondition",
-							"parameters": [ {
-								"name": "expression",
-								"value": "core.HaveUnits()"
-							}, {
-								"name": "repeat",
-								"value": "true"
-							} ]
-						} ],
-						"id": "z6mHH8TNSITIkdXrLnGYSZtpjc72xZ8D",
-						"nodeType": "repeat",
-						"parameters": []
-					} ],
-					"id": "6YtBOoCNPjT1ASZik9Z2iwK816nsDQoJ",
-					"nodeType": "parallel",
-					"parameters": [ {
-						"name": "mode",
-						"value": "any-success"
-					} ]
-				} ],
-				"id": "W8BNtT8P5ahpxrPSjpKDpLla8XHov3Cd",
-				"nodeType": "sequence",
-				"parameters": []
-			}, {
-				"children": [],
-				"id": "rIogf8zjk6axZOOW4HLk1icq8NYYYK90",
-				"nodeType": "success",
-				"parameters": []
-			} ],
-			"id": "dkXyCsKvAXtcgtCoh3MNFARrpdvEh5qc",
-			"nodeType": "roleSplit",
-			"parameters": [ {
-				"name": "mode",
-				"value": "all-success"
-			} ]
-		}, {
 			"children": [],
-			"id": "Gyn6i6p5reLrfDzk1BNeNbvHePeMtNU4",
+			"id": "qH52SD700yc8UYADjZ00rrBdOSM5P2xW",
 			"nodeType": "luaCommand",
 			"parameters": [ {
 				"name": "var",
-				"value": "x"
+				"value": "mission_info"
+			}, {
+				"name": "value",
+				"value": "core.MissionInfo()"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		}, {
+			"children": [],
+			"id": "thjzjv7HtMZtAguvpwite6JGQVAIjeKv",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "var",
+				"value": "stranded_units"
+			}, {
+				"name": "value",
+				"value": "nota_vvancak_hla.GetStrandedUnits()"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		}, {
+			"children": [],
+			"id": "ktnap9acECyjoyfX00VMZVbrpd7vxOuz",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "var",
+				"value": "enemy_positions"
+			}, {
+				"name": "value",
+				"value": "{}"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		}, {
+			"children": [],
+			"id": "9JjpDEs7pHTWJKy8f3CqqTB1TVy31hDS",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "var",
+				"value": "_"
+			}, {
+				"name": "value",
+				"value": "nota_vvancak_hla.PopulateEnemyPositions(enemy_positions, core.EnemyUnits())"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		}, {
+			"children": [],
+			"id": "SVSWCT47SdY7OUDbxkkT176Jj1kdlmsm",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "var",
+				"value": "threat_network"
+			}, {
+				"name": "value",
+				"value": "nota_vvancak_hla.GetThreatNetwork(enemy_positions, 150)"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		}, {
+			"children": [],
+			"id": "5AIH8r2vn51B5YTimyM9TPN8mBKxgHcY",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "var",
+				"value": "enemy_positions"
 			}, {
 				"name": "value",
 				"value": "nil"
@@ -215,14 +230,57 @@
 			"scriptName": "store"
 		}, {
 			"children": [],
-			"id": "O2Q95eKpeKCZxq2kT0vlG3dfeiD3T6Rz",
-			"nodeType": "roleSplit",
+			"id": "EIdMV7OWd9lItNDnYoQDJUAEF5AURj9h",
+			"nodeType": "luaCommand",
 			"parameters": [ {
-				"name": "mode",
-				"value": "all-success"
-			} ]
+				"name": "var",
+				"value": "threat_network"
+			}, {
+				"name": "value",
+				"value": "nota_vvancak_hla.CreateNavigationGraph(mission_info.safeArea.center, threat_network, 150)"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		}, {
+			"children": [],
+			"id": "49MDgdanx8lOBs7hfE45q9CY1WdXu0vU",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "var",
+				"value": "threat_network"
+			}, {
+				"name": "value",
+				"value": "nil"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		}, {
+			"children": [],
+			"id": "YsuZTDXw70XRq1C9vyXQ5Gjsd08HucJU",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "enemy_positions",
+				"value": "<position table here>"
+			}, {
+				"name": "safe_spot_place",
+				"value": "<position here>"
+			}, {
+				"name": "safe_spot_radius",
+				"value": "100"
+			}, {
+				"name": "stranded_units",
+				"value": "<unit id array here>"
+			}, {
+				"name": "scriptName",
+				"value": "nota_vvancak_hla.RescueUnits"
+			} ],
+			"scriptName": "nota_vvancak_hla.RescueUnits"
 		} ],
-		"id": "ZpN2P9xiM6je09C6Hfwsrr6SDEQTlbsu",
+		"id": "bPxuVLf1BAvCVSrW5I0WcmbV8ccrbykx",
 		"nodeType": "sequence",
 		"parameters": []
 	}

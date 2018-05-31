@@ -22,7 +22,8 @@ return function()
     for i = 1, #units do
         local unitDefId = SpringGetUnitDefID(units[i])
         local unitName = UnitDefs[unitDefId].name
-        if (unitName ~= "armpeep" and unitName ~= "armatlas") then
+
+        if (unitName ~= "armrad" and unitName ~= "armwin") then
             table.insert(stranded_units, units[i])
         end
     end
