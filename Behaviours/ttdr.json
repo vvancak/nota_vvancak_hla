@@ -16,119 +16,119 @@
 			"height": 54,
 			"title": "success",
 			"width": 132,
-			"x": 852,
+			"x": 851,
 			"y": 491
 		},
 		"1gJSTDRJnC9MGzPNF5aj5i6VqqkbICdM": {
 			"height": 60,
 			"title": "II. Pathfinding",
 			"width": 169,
-			"x": 563,
+			"x": 564,
 			"y": 17
 		},
 		"49MDgdanx8lOBs7hfE45q9CY1WdXu0vU": {
 			"height": 94,
 			"title": "GarbageCollection II",
 			"width": 469,
-			"x": 892,
+			"x": 891,
 			"y": 144
 		},
 		"5AIH8r2vn51B5YTimyM9TPN8mBKxgHcY": {
 			"height": 94,
 			"title": "GarbageCollection I",
 			"width": 469,
-			"x": 890,
+			"x": 889,
 			"y": -55
 		},
 		"7gOfVXnWgl6LyDxibGoUYTHAgLs3cCnG": {
 			"height": 94,
 			"title": "IV. Exit",
 			"width": 277,
-			"x": 579,
+			"x": 580,
 			"y": 588
 		},
 		"EIdMV7OWd9lItNDnYoQDJUAEF5AURj9h": {
 			"height": 94,
 			"title": "Generate Navigation network",
 			"width": 737,
-			"x": 889,
+			"x": 888,
 			"y": 46
 		},
 		"OLP6ySDundSUGv5mowAidzKbq8IrT0uc": {
 			"height": 172,
 			"title": "nota_vvancak_hla.RescueUnits",
 			"width": 339,
-			"x": 850,
-			"y": 317
+			"x": 852,
+			"y": 312
 		},
 		"SVSWCT47SdY7OUDbxkkT176Jj1kdlmsm": {
 			"height": 94,
 			"title": "Generate Threat network",
 			"width": 555,
-			"x": 891,
+			"x": 890,
 			"y": -160
 		},
 		"bPxuVLf1BAvCVSrW5I0WcmbV8ccrbykx": {
 			"height": 60,
 			"title": "sequence",
 			"width": 143,
-			"x": 316,
+			"x": 320,
 			"y": 17
 		},
 		"d7XCdZIL1cVXQ8se0Q12Wh2bwpXBRSHl": {
 			"height": 131,
 			"title": "reference",
 			"width": 324,
-			"x": 886,
+			"x": 885,
 			"y": -460
 		},
 		"dkXyCsKvAXtcgtCoh3MNFARrpdvEh5qc": {
 			"height": 70,
 			"title": "I. Scouting phase",
 			"width": 202,
-			"x": 568,
+			"x": 569,
 			"y": -357
 		},
 		"ft9IU0ilGQpkZwkpibyJAJYhrwTw2K5G": {
 			"height": 54,
 			"title": "success",
 			"width": 132,
-			"x": 853,
+			"x": 852,
 			"y": 263
 		},
 		"pVgUNWoyzwZvNKMENntJqXcqXgxPJK8C": {
 			"height": 70,
 			"title": "III. Rescue",
 			"width": 202,
-			"x": 571,
+			"x": 572,
 			"y": 360
 		},
 		"qH52SD700yc8UYADjZ00rrBdOSM5P2xW": {
 			"height": 94,
 			"title": "0. Mission Info (helper)",
 			"width": 323,
-			"x": 563,
+			"x": 564,
 			"y": -670
 		},
 		"rIogf8zjk6axZOOW4HLk1icq8NYYYK90": {
 			"height": 54,
 			"title": "success",
 			"width": 132,
-			"x": 886,
+			"x": 885,
 			"y": -318
 		},
 		"thjzjv7HtMZtAguvpwite6JGQVAIjeKv": {
 			"height": 94,
 			"title": "store",
-			"width": 326,
-			"x": 888,
+			"width": 702,
+			"x": 887,
 			"y": -256
 		},
 		"xfnjZH8bnWVjqJ0EuQbeFQNdlnGfLXrE": {
 			"height": 94,
 			"title": "0. edge_size (helper)",
 			"width": 323,
-			"x": 562,
+			"x": 563,
 			"y": -556
 		}
 	},
@@ -167,7 +167,7 @@
 				"value": "EDGE_SIZE"
 			}, {
 				"name": "value",
-				"value": "200"
+				"value": "150"
 			}, {
 				"name": "scriptName",
 				"value": "store"
@@ -201,7 +201,7 @@
 					"value": "stranded_units"
 				}, {
 					"name": "value",
-					"value": "nota_vvancak_hla.GetStrandedUnits()"
+					"value": "nota_vvancak_hla.GetStrandedUnits(mission_info.safeArea.center, mission_info.safeArea.radius)"
 				}, {
 					"name": "scriptName",
 					"value": "store"

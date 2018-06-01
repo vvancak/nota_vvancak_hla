@@ -44,80 +44,20 @@ function getInfo()
 end
 
 -- speed-ups
-local SpringGetUnitPosition = Spring.GetUnitPosition
 local SpringGiveOrderToUnit = Spring.GiveOrderToUnit
 local SpringGetUnitCommands = Spring.GetUnitCommands
-local SpringGetGroundHeight = Spring.GetGroundHeight
 local SpringGetUnitIsTransporting = Spring.GetUnitIsTransporting
 
 -- states
 local FREE = 1
 local TARGET_PICKUP = 2
 local TARGET_RETURN = 3
-
-local function GetNode(position, edge_size)
-    local x = math.floor(position.x / edge_size) * edge_size
-    local z = math.floor(position.z / edge_size) * edge_size
-    local y = SpringGetGroundHeight(x, z)
-    return Vec3(x, y, z)
-end
-
-local function GetPath(from, start, nav_graph, edge_size)
-
-    local path = {}
-    local current = GetNode(from, edge_size)
-
-    while current:Distance(start) > (edge_size * 2) do
-        table.insert(path, current)
-
-        if (Script.LuaUI('drawCross_update')) then
-            Script.LuaUI.drawCross_update(
-                {
-                    x = current.x,
-                    y = current.y,
-                    z = current.z,
-                    color = {r = 0, g = 0, b = 1}
-                }
-            )
-        end
-
-        current = nav_graph[current.x][current.z]
-    end
-
-    return path
-end
-
-local function GoPickUpUnit(unit, target, path)
-    for i = #path, 1, -1 do
-        SpringGiveOrderToUnit(unit, CMD.MOVE, path[i]:AsSpringVector(), { "shift" })
-    end
-    SpringGiveOrderToUnit(unit, CMD.LOAD_UNITS, { target }, { "shift" })
-end
-
-local function ReturnToSafeSpot(unit, path, safe_spot_place)
-    for i = 1, #path do
-        SpringGiveOrderToUnit(unit, CMD.MOVE, path[i]:AsSpringVector(), { "shift" })
-    end
-    SpringGiveOrderToUnit(unit, CMD.MOVE, safe_spot_place:AsSpringVector(), { "shift" })
-end
-
-local function DropUnit(unit, safe_spot_place, safe_spot_radius)
-    local rnd_range = 0.35 * safe_spot_radius
-
-    local dx = math.random(-rnd_range, rnd_range)
-    local dz = math.random(-rnd_range, rnd_range)
-
-    local position = safe_spot_place + Vec3(dx, 0, dz)
-    SpringGiveOrderToUnit(unit, CMD.MOVE, position:AsSpringVector(), { "shift" })
-    SpringGiveOrderToUnit(unit, CMD.TIMEWAIT, { 500 }, { "shift" })
-
-    SpringGiveOrderToUnit(unit, CMD.UNLOAD_UNITS, position:AsSpringVector(), { "shift" })
-    SpringGiveOrderToUnit(unit, CMD.MOVE, position:AsSpringVector(), { "shift" })
-end
+local TARGET_DROP = 4
 
 local function GetNextTarget(self, stranded_units)
     local index = self.next_target
     if index > #stranded_units then
+        self.finished = self.finished + 1
         return nil
     else
         self.next_target = index + 1
@@ -125,75 +65,89 @@ local function GetNextTarget(self, stranded_units)
     end
 end
 
-local function GetPos(unit_id)
-    local x, y, z = SpringGetUnitPosition(unit_id)
-    return Vec3(x, y, z)
-end
-
-local function CanNavigate(position, nav_graph, edge_size)
-    if (position == nil) then
-        return false
-    end
-
-    local node = GetNode(position, edge_size)
-    return nav_graph[node.x][node.z] ~= nil
-end
-
-local function SingleUnitSaving(self, unit, parameter)
+local function GoPickUpUnit(self, unit, parameter)
     local stranded_units = parameter.stranded_units
     local search_start_place = parameter.search_start_place
 
     local nav_graph = parameter.navigation_graph
     local edge_size = parameter.edge_size
 
+    local target
+    local path
+
+    while not path do
+        target = GetNextTarget(self, stranded_units)
+
+        if target == nil then
+            SpringGiveOrderToUnit(unit, CMD.MOVE, search_start_place:AsSpringVector(), {})
+            SpringGiveOrderToUnit(unit, CMD.WAIT, {}, CMD.OPT_SHIFT)
+            return
+        end
+
+        path = Sensors.GetPath(target, search_start_place, nav_graph, edge_size)
+        self.unit_paths[unit] = path
+    end
+
+    for i = #path, 1, -1 do
+        SpringGiveOrderToUnit(unit, CMD.MOVE, path[i]:AsSpringVector(), CMD.OPT_SHIFT)
+    end
+    SpringGiveOrderToUnit(unit, CMD.LOAD_UNITS, { target }, CMD.OPT_SHIFT)
+end
+
+local function ReturnToSafeSpot(self, unit, parameter)
+    local path = self.unit_paths[unit]
+    local safe_spot_place = parameter.safe_spot_place
+
+    for i = 1, #path do
+        SpringGiveOrderToUnit(unit, CMD.MOVE, path[i]:AsSpringVector(), CMD.OPT_SHIFT)
+    end
+    SpringGiveOrderToUnit(unit, CMD.MOVE, safe_spot_place:AsSpringVector(), CMD.OPT_SHIFT)
+end
+
+local function DropUnit(self, unit, parameter)
     local temp = parameter.safe_spot_place
     local safe_spot_place = Vec3(temp.x, temp.y, temp.z)
     local safe_spot_radius = parameter.safe_spot_radius
 
+    SpringGiveOrderToUnit(unit, CMD.TIMEWAIT, { 500 }, CMD.OPT_SHIFT)
+    SpringGiveOrderToUnit(unit, CMD.UNLOAD_UNITS, { safe_spot_place.x, safe_spot_place.y, safe_spot_place.z, safe_spot_radius * 0.8 }, CMD.OPT_SHIFT)
+    SpringGiveOrderToUnit(unit, CMD.MOVE, safe_spot_place:AsSpringVector(), CMD.OPT_SHIFT)
+end
+
+local function SingleUnitSaving(self, unit, parameter)
+
     -- initialization
     if (self.unit_states[unit] == nil) then
-
         self.unit_states[unit] = FREE
     end
 
-    -- pick up next target
+    -- TARGET PICKUP --
     if (self.unit_states[unit] == FREE) then
-
-        local target
-        local target_pos
-
-        while not CanNavigate(target_pos, nav_graph, edge_size) do
-            target = GetNextTarget(self, stranded_units)
-            if not target then return end
-            target_pos = GetPos(target)
-        end
-
-        local path = GetPath(target_pos, search_start_place, nav_graph, edge_size)
-        self.unit_paths[unit] = path
-
-        GoPickUpUnit(unit, target, path)
+        GoPickUpUnit(self, unit, parameter)
         self.unit_states[unit] = TARGET_PICKUP
 
-        -- return to the safe spot
+        -- RETURN TO THE SAFE PLACE --
     elseif (self.unit_states[unit] == TARGET_PICKUP) then
-
-        ReturnToSafeSpot(unit, self.unit_paths[unit], safe_spot_place)
+        ReturnToSafeSpot(self, unit, parameter)
         self.unit_states[unit] = TARGET_RETURN
 
-        -- dropping unit
+        -- DROP UNITS --
     elseif (self.unit_states[unit] == TARGET_RETURN) then
+        DropUnit(self, unit, parameter)
+        self.unit_states[unit] = TARGET_DROP
 
-        if #SpringGetUnitIsTransporting(unit) == 0 then
-            self.finished_targets = self.finished_targets + 1
-            self.unit_states[unit] = FREE
+        -- CHECK DROP & FREE UNIT (or retry) --
+    elseif (self.unit_states[unit] == TARGET_DROP) then
+        if #SpringGetUnitIsTransporting(unit) > 0 then
+            self.unit_states[unit] = TARGET_RETURN
         else
-            DropUnit(unit, safe_spot_place, safe_spot_radius)
+            self.unit_states[unit] = FREE
         end
     end
 end
 
-local function AllSaved(self, stranded_units)
-    return self.finished_targets == #stranded_units
+local function AllFinished(self, units)
+    return self.finished >= #units
 end
 
 local function ClearState(self)
@@ -203,7 +157,7 @@ local function ClearState(self)
     self.unit_states = {}
 
     self.next_target = 1
-    self.finished_targets = 0
+    self.finished = 0
 end
 
 function Run(self, units, parameter)
@@ -211,15 +165,14 @@ function Run(self, units, parameter)
         ClearState(self)
     end
 
-    if AllSaved(units, parameter.stranded_units) then
+    if AllFinished(self, units) then
+        ClearState(self)
         return SUCCESS
     end
 
     for i = 1, #units do
         local unit = units[i]
-
         local cmds = SpringGetUnitCommands(unit, 1)
-
         if #cmds == 0 then
             SingleUnitSaving(self, unit, parameter)
         end

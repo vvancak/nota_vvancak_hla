@@ -18,26 +18,34 @@ mapSizeX = Game.mapSizeX
 mapSizeZ = Game.mapSizeZ
 SpringGetGroundHeight = Spring.GetGroundHeight
 
-RANGE = 1100
-HEIGHT_RANGE = 300
+RANGE = 1000
+
+HEIGHT_LIMIT = 250
+HEIGHT_RANGE = 750
+
+local function IsWithinRange(from, to)
+    local height_diff = from.y - to.y
+
+    if (height_diff > HEIGHT_LIMIT) then
+        return from:Distance(to) < HEIGHT_RANGE
+    else
+        return from:Distance(to) < RANGE
+    end
+end
 
 local function IsInEnemyRange(enemy_positions, my_position)
     local found_in_range_enemy = false
     for id, position in pairs(enemy_positions) do
-
-        local height_diff = position.y - my_position.y
-        if (position:Distance(my_position) < RANGE and height_diff < HEIGHT_RANGE) then
+        if IsWithinRange(position, my_position) then
             found_in_range_enemy = true
 
             if (Script.LuaUI('drawCross_update')) then
-                Script.LuaUI.drawCross_update(
-                    {
-                        x = my_position.x,
-                        y = my_position.y,
-                        z = my_position.z,
-                        color = {r = 1, g = 0, b = 0}
-                    }
-                )
+                Script.LuaUI.drawCross_update({
+                    x = my_position.x,
+                    y = my_position.y,
+                    z = my_position.z,
+                    color = { r = 1, g = 0, b = 0 }
+                })
             end
         end
     end
@@ -50,7 +58,7 @@ return function(enemy_positions, fly_height, edge_size)
     for x = 0, mapSizeX, edge_size do
         network[x] = {}
         for z = 0, mapSizeZ, edge_size do
-            network[x][z] = not IsInEnemyRange(enemy_positions, Vec3(x, fly_height + SpringGetGroundHeight(x,z), z))
+            network[x][z] = not IsInEnemyRange(enemy_positions, Vec3(x, fly_height + SpringGetGroundHeight(x, z), z))
         end
     end
     return network
